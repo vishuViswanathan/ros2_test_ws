@@ -76,6 +76,7 @@ int main(int argc , char *argv[])
 	}
 	
 	puts("Connected\n");
+	# Modified check for git
 	waitForPi();
 	if (steps > 0) {
 		for (int n = 0; n < steps; n++) {
