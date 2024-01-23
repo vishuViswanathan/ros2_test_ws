@@ -76,17 +76,18 @@ int main(int argc , char *argv[])
 	}
 	
 	puts("Connected\n");
-	# Modified check for git
 	waitForPi();
 	if (steps > 0) {
 		for (int n = 0; n < steps; n++) {
 			printf("step %d/%d action %s\n", n + 1, steps, getFromPi(cmds[n]).c_str());
-			sleep(2);
+			// usleep(100000);
 		}
 	}
 	else {
 		puts(getFromPi("e").c_str());
 		puts(getFromPi("m 200 0").c_str());	
+
+
 		sleep(2);
 		puts(getFromPi("e").c_str());
 		puts(getFromPi("m 0 200").c_str());
@@ -96,10 +97,10 @@ int main(int argc , char *argv[])
 		sleep(1);
 		puts(getFromPi("r").c_str());
 	}
-	sleep(1);
-    puts(getFromPi("e ").c_str());
+	// sleep(1);
+    // puts(getFromPi("e ").c_str());
 
-	puts("Reply received\n");
+	// puts("Reply received\n");
 	
 	close(socket_desc);
     puts("Socket closed\n");
